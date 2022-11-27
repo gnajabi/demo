@@ -19,10 +19,11 @@ public class EmployeeController {
         this.service = service;
     }
 
-    /*@GetMapping(value = "/employees")
-    public Iterable getEmployees() {
-        return service.getEmployeeRecords();
-    }*/
+    @GetMapping(value = "/employee")
+    public ArrayList getEmployees() {
+        return (ArrayList) service.getEmployeeRecords();
+    }
+    
     @PostMapping(value = "/employee")
     public void createRecord(@RequestBody Employee employee) {
         service.createRecord(employee);

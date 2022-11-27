@@ -1,11 +1,13 @@
 package com.example.demo;
 
 import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ServiceImpl implements EmployeeService {
 
+    @Autowired
     private EmployeeRepository empRepo;
 
     @Override
@@ -29,7 +31,7 @@ public class ServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Iterable<Employee> getEmployeeRecords() {
-        return empRepo.findAll();
+    public ArrayList<Employee> getEmployeeRecords() {
+        return (ArrayList<Employee>) empRepo.findAll();
     }
 }
