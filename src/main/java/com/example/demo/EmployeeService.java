@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public interface EmployeeService {
 
@@ -14,7 +13,8 @@ public interface EmployeeService {
     Employee getEmployeeById(int empID);
 
     // Update operation
-    void updateRecord(int empID, String name, int age);
+
+    void updateRecord(int empID, Employee emp);
 
     // Delete operation
     void deleteRecord(int empID);

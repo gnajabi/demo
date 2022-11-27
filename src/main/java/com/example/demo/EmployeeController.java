@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -39,9 +40,7 @@ public class EmployeeController {
 
     @PutMapping(value = "/employee/{id}")
     public void updateEmployeeRecord(@PathVariable int id, @RequestBody Employee employee) {
-        String name = employee.getName();
-        int age = employee.getAge();
-        service.updateRecord(id, name, age);
+        service.updateRecord(id, employee);
     }
 
     @DeleteMapping(value = "/employee/{id}")

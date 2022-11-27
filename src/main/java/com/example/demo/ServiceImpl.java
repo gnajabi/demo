@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.util.ArrayList;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,10 +22,11 @@ public class ServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void updateRecord(int empID, String name, int age) {
+    @Transactional
+    public void updateRecord(int empID, Employee emp) {
         Employee employee = empRepo.findById(empID).get();
-        employee.setName(name);
-        employee.setAge(age);
+        employee.setName(emp.getName());
+        employee.setAge(emp.getAge());
     }
 
     @Override
