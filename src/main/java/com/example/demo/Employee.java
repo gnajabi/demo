@@ -1,16 +1,37 @@
 package com.example.demo;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+
+@Entity
+@Table
 
 public class Employee implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     int empID;
     String name;
     int age;
 
+    public Employee() {
+    }
+
     public Employee(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public int getEmpID() {
+        return empID;
+    }
+
+    public void setEmpID(int empID) {
+        this.empID = empID;
     }
 
     public String getName() {

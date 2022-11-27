@@ -1,7 +1,9 @@
 package com.example.demo;
 
-import java.util.List;
+import java.util.ArrayList;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ServiceImpl implements EmployeeService {
 
     private EmployeeRepository empRepo;
@@ -9,11 +11,6 @@ public class ServiceImpl implements EmployeeService {
     @Override
     public void createRecord(Employee employee) {
         empRepo.save(employee);
-    }
-
-    @Override
-    public List<Employee> getEmployeeRecords() {
-        return empRepo.findAll();
     }
 
     @Override
@@ -31,4 +28,8 @@ public class ServiceImpl implements EmployeeService {
         empRepo.deleteById(empID);
     }
 
+    @Override
+    public Iterable<Employee> getEmployeeRecords() {
+        return empRepo.findAll();
+    }
 }

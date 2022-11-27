@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface EmployeeService {
 
@@ -8,7 +8,7 @@ public interface EmployeeService {
     void createRecord(Employee employee);
 
     // Read operation
-    List<Employee> getEmployeeRecords();
+    Iterable<Employee> getEmployeeRecords();
 
     Employee getEmployeeById(int empID);
 
