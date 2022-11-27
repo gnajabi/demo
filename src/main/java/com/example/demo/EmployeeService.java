@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface EmployeeService {
 
@@ -8,12 +9,12 @@ public interface EmployeeService {
     void createRecord(Employee employee);
 
     // Read operation
-    Iterable<Employee> getEmployeeRecords();
+    ArrayList<Employee> getEmployeeRecords();
 
     Employee getEmployeeById(int empID);
 
     // Update operation
-    Employee updateRecord(int empID);
+    void updateRecord(int empID, String name, int age);
 
     // Delete operation
     void deleteRecord(int empID);

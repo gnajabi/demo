@@ -14,9 +14,9 @@ public class Employee implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int empID;
-    String name;
-    int age;
+    private int empID;
+    private String name;
+    private int age;
 
     public Employee() {
     }

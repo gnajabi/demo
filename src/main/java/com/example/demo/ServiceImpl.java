@@ -21,8 +21,10 @@ public class ServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee updateRecord(int empID) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void updateRecord(int empID, String name, int age) {
+        Employee employee = empRepo.findById(empID).get();
+        employee.setName(name);
+        employee.setAge(age);
     }
 
     @Override
