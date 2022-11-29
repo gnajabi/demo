@@ -11,5 +11,7 @@ Without this configuration present, some functionality in the IDE may be limited
         <word>jdbc</word>
         <word>localhost</word>
         <word>mysql</word>
+        <word>mysqldb</word>
+        <word>useSSL</word>
     </spellchecker-wordlist>
 </project-shared-configuration>
