@@ -1,0 +1,21 @@
+git config --global user.name "gnajabi" 
+git config --global user.email "gnajabi123@gmail.com"
+//add all changes detected by git status:
+git add . 
+git commit -m "added getById, put and delete functions"
+//to use git push remotely, create an SSH Key for encryption on your local machine:
+ssh-keygen -t rsa -b 4096 -C "gnajabi123@gmail.com"
+#.pub is the public key
+#use private key to connect to gitHub remotely
+#origin is the location of our git repository
+#master is the branchthat we want to push to
+#git init -initializes git repositoryin a local folder
+git push origin master
+#add new remote origin
+git remote add origin git@github.com:gnajabi/spark-java1.git
+
+git commit -m "happy and sad"
+git remote add origin git@github.com:gnajabi/happy-and-sad.git
+git remote add origin git@github.com:gnajabi/demo.git
+//check log for past 10 commits:
+git log -10
